@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: ramongr
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: serialize_examples_development
+
+test:
+  <<: *default
+  database: serialize_examples_test
+
+production:
+  <<: *default
+  database: serialize_examples_production
+  username: serialize_examples
+  password: <%= ENV['SERIALIZE_EXAMPLES_DATABASE_PASSWORD'] %>

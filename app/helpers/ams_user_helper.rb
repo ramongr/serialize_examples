@@ -1,0 +1,2 @@
+module AmsUserHelper
+end
